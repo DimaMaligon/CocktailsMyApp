@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cancel_button_card"
+    style="@style/cornersScrollCard"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.cardcocktail.CocktailCardFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="fill_parent"
+        android:layout_height="318dp"
+        android:src="@drawable/cocktail1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="250dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="1.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/edit_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/top_corners_shape"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title_card_cocktail"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:gravity="center"
+                android:text="@string/title_cocktail"
+                android:textSize="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/description_card_cocktail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="@string/description_field"
+                app:layout_constraintEnd_toEndOf="@+id/title_card_cocktail"
+                app:layout_constraintStart_toStartOf="@+id/title_card_cocktail"
+                app:layout_constraintTop_toBottomOf="@+id/title_card_cocktail" />
+
+            <TextView
+                android:id="@+id/ingredies_cocktail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="@string/ingredients_field"
+                app:layout_constraintEnd_toEndOf="@+id/description_card_cocktail"
+                app:layout_constraintStart_toStartOf="@+id/description_card_cocktail"
+                app:layout_constraintTop_toBottomOf="@+id/description_card_cocktail" />
+
+            <TextView
+                android:id="@+id/recipe_card_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="@string/recipe_field"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/ingredies_cocktail"
+                app:layout_constraintStart_toStartOf="@+id/ingredies_cocktail"
+                app:layout_constraintTop_toBottomOf="@+id/ingredies_cocktail" />
+
+            <TextView
+                android:id="@+id/recipe_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="@string/recipe_description_field"
+                app:layout_constraintEnd_toEndOf="@+id/recipe_card_title"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/recipe_card_title"
+                app:layout_constraintTop_toBottomOf="@+id/recipe_card_title" />
+
+            <Button
+                android:id="@+id/button_edit_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/edit_button"
+                app:layout_constraintEnd_toEndOf="@+id/recipe_card"
+                app:layout_constraintStart_toStartOf="@+id/recipe_card"
+                app:layout_constraintTop_toBottomOf="@+id/recipe_card" />
+
+            <Button
+                android:id="@+id/button_cancel_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/cancel_button"
+                app:layout_constraintEnd_toEndOf="@+id/button_edit_card"
+                app:layout_constraintStart_toStartOf="@+id/button_edit_card"
+                app:layout_constraintTop_toBottomOf="@+id/button_edit_card" />
+
+            <Button
+                android:id="@+id/button_delete_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                style="@style/buttonDelete"
+                android:text="@string/delete_button"
+                app:layout_constraintEnd_toEndOf="@+id/button_cancel_card"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/button_cancel_card"
+                app:layout_constraintTop_toBottomOf="@+id/button_cancel_card" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

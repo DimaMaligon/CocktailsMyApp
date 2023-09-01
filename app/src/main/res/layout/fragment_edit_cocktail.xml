@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.editcocktail.EditCocktailFragment">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageEdit"
+        android:layout_width="286dp"
+        android:layout_height="213dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/cocktail1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/circleImageView" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/title_edit_cocktail_layout"
+        android:layout_width="300dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:hint="@string/title_field"
+        app:layout_constraintEnd_toEndOf="@+id/imageEdit"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="@+id/imageEdit"
+        app:layout_constraintTop_toBottomOf="@+id/imageEdit">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/title_edit_cocktail"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:ems="10"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/description_edit_cocktail_layout"
+        android:layout_width="300dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:hint="@string/description_field"
+        app:layout_constraintEnd_toEndOf="@+id/title_edit_cocktail_layout"
+        app:layout_constraintStart_toStartOf="@+id/title_edit_cocktail_layout"
+        app:layout_constraintTop_toBottomOf="@+id/title_edit_cocktail_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/description_edit_cocktail"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:ems="10"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tag_edit_buttons_recycler"
+        android:layout_width="161dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/description_edit_cocktail_layout"
+        app:layout_constraintStart_toEndOf="@+id/button_edit_ingredient"
+        app:layout_constraintTop_toBottomOf="@+id/description_edit_cocktail_layout" />
+
+    <Button
+        android:id="@+id/button_edit_ingredient"
+        android:layout_width="54dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/plus"
+        app:layout_constraintStart_toStartOf="@+id/description_edit_cocktail_layout"
+        app:layout_constraintTop_toBottomOf="@+id/description_edit_cocktail_layout" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/recipe_edit_cocktail_layout"
+        android:layout_width="300dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:hint="@string/recipe_field"
+
+        app:layout_constraintEnd_toEndOf="@+id/description_edit_cocktail_layout"
+        app:layout_constraintStart_toStartOf="@+id/description_edit_cocktail_layout"
+        app:layout_constraintTop_toBottomOf="@+id/tag_edit_buttons_recycler">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/recipe_edit_cocktail"
+            android:layout_width="300dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="28dp"
+            android:ems="10"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/button_edit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/edit_button"
+        app:layout_constraintEnd_toEndOf="@+id/recipe_edit_cocktail_layout"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="@+id/recipe_edit_cocktail_layout"
+        app:layout_constraintTop_toBottomOf="@+id/recipe_edit_cocktail_layout" />
+
+    <Button
+        android:id="@+id/button_cancel_edit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/cancel_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/button_edit"
+        app:layout_constraintStart_toStartOf="@+id/button_edit"
+        app:layout_constraintTop_toBottomOf="@+id/button_edit"
+        app:layout_constraintVertical_bias="0.084" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
