@@ -39,7 +39,7 @@
 Если мы хотим сохранить коктейль, то тапаем по кнопке ```SAVE```.
 
 <p  align="center">
-<code><img width="30%" title="cocktail" src="readme/images/gif_add_cocktail.gif"></code>
+<code><img width="30%" title="cocktail" src="readme/gif/gif_add_cocktail.gif"></code>
 </p>
 
 Для работы удаления коктейля из списка нужно перейти в карточку и тапнуть на кнопку ```DELETE```.
