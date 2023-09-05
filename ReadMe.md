@@ -36,16 +36,16 @@
 
 На экране добавления карточки коктейля, есть поля: тайтл, описание, ингредиенты, рецепт, возможность добавить фото коктейля.
 
+Если мы хотим сохранить коктейль, то тапаем по кнопке ```SAVE```.
+
 <p  align="center">
 <code><img width="30%" title="cocktail" src="readme/images/gif_add_cocktail.gif"></code>
 </p>
 
-Если мы хотим сохранить коктейль, то тапаем по кнопке ```SAVE```.
-
 Для работы удаления коктейля из списка нужно перейти в карточку и тапнуть на кнопку ```DELETE```.
 
 <p align="center">
-  <code> <img width="30%" title="Video" src="readme/gif/gif_delete_cocktail"> </code>
+  <code> <img width="30%" title="Video" src="readme/gif/gif_delete_cocktail.gif"> </code>
 </p>
 
 ## Описание проекта
