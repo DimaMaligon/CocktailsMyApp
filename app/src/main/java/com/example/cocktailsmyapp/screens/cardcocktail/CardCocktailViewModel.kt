@@ -1,10 +1,10 @@
 package com.example.cocktailsmyapp.screens.cardcocktail
 
-import android.net.Uri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.cocktailsmyapp.R
-import com.example.cocktailsmyapp.domain.interactors.CocktailInteractor
+import com.example.cocktailsmyapp.domain.interactors.DeleteCocktailUseCase
+import com.example.cocktailsmyapp.domain.interactors.UpdateCocktailUseCase
 import com.example.cocktailsmyapp.domain.models.Cocktail
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -14,9 +14,9 @@ import javax.inject.Inject
 
 
 @HiltViewModel
-class CardCocktailViewModel @Inject constructor(private val interactorCocktail: CocktailInteractor) :
+class CardCocktailViewModel @Inject constructor(private val updateCocktailUseCase: UpdateCocktailUseCase, private val deleteCocktailUseCase: DeleteCocktailUseCase) :
     ViewModel() {
-    val imageUri = Uri.parse(R.string.path_main_domain.toString() + R.drawable.cocktail1).toString()
+    val imageUri = (R.string.path_main_domain + R.drawable.cocktail1).toString()
 
     private val imageCocktailMutable = MutableStateFlow(imageUri)
     private val titleCocktailMutable = MutableStateFlow(R.string.new_cocktail.toString())
@@ -32,7 +32,7 @@ class CardCocktailViewModel @Inject constructor(private val interactorCocktail: 
 
     fun updateCocktail() {
         viewModelScope.launch {
-            interactorCocktail.updateCocktail(
+            updateCocktailUseCase.updateCocktail(
                 Cocktail(
                     cocktailObjectMutable.value.id,
                     title = titleCocktailMutable.value,
@@ -47,7 +47,7 @@ class CardCocktailViewModel @Inject constructor(private val interactorCocktail: 
 
     fun deleteCocktail() {
         viewModelScope.launch {
-            interactorCocktail.deleteCocktail(
+            deleteCocktailUseCase.deleteCocktail(
                 cocktailObjectMutable.value
             )
         }

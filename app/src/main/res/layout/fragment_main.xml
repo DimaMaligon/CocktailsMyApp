@@ -6,6 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".screens.main.MainFragment">
 
+    <ImageView
+        android:id="@+id/image_main_girl"
+        android:layout_width="408dp"
+        android:layout_height="392dp"
+        android:layout_marginTop="45dp"
+        android:src="@drawable/main_cockiail_girl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_main" />
+
+    <TextView
+        android:id="@+id/hint_add_cocktail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Add you first cocktail"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/image_main_girl"
+        app:layout_constraintStart_toStartOf="@+id/image_main_girl"
+        app:layout_constraintTop_toBottomOf="@+id/image_main_girl" />
+
+    <ImageView
+        android:id="@+id/image_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/baseline_arrow_downward_24"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout"
+        app:layout_constraintTop_toBottomOf="@+id/hint_add_cocktail" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_cocktails"
         android:layout_width="0dp"
@@ -69,7 +100,8 @@
             app:layout_constraintEnd_toStartOf="@+id/guideline_fab_right"
             app:layout_constraintStart_toStartOf="@+id/guideline_fab_left"
             app:tint="@color/primary_on_color"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            android:contentDescription="@string/float_button" />
 
         <ImageView
             android:id="@+id/bottom_fab_table"

@@ -30,6 +30,7 @@ class CocktailAdapter constructor(private val fragment: Fragment) :
                 Picasso.get().load(cocktail.image)
                     .into(imageView)
 
+//imageView.setImageURI(cocktailModel.imageUri.toUri())
                 titleCocktail.text = cocktail.title
                 imageView.setOnClickListener {
                     cocktailModel.setCocktail(cocktail)

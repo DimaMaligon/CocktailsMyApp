@@ -50,9 +50,24 @@ class MainFragment : Fragment() {
     private fun observeState() {
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             mainModel.getCocktails()
-            mainModel.cocktailsList.collect {
-                initRecyclerCocktails(it as ArrayList<Cocktail>)
+            val countListCocktails = mainModel.cocktailsList.value
+            if (countListCocktails.size > 0) {
+                hideHint()
+                mainModel.cocktailsList.collect {
+                    initRecyclerCocktails(it as ArrayList<Cocktail>)
+                }
             }
+            else {
+                binding.recyclerCocktails.visibility = View.INVISIBLE
+            }
+        }
+    }
+
+    private fun hideHint() {
+        binding.apply {
+            imageMainGirl.visibility = View.INVISIBLE
+            imageArrow.visibility = View.INVISIBLE
+            hintAddCocktail.visibility = View.INVISIBLE
         }
     }
 }

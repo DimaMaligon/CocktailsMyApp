@@ -1,10 +1,9 @@
 package com.example.cocktailsmyapp.screens.addcocktail
 
-import android.net.Uri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.cocktailsmyapp.R
-import com.example.cocktailsmyapp.domain.interactors.CocktailInteractor
+import com.example.cocktailsmyapp.domain.interactors.AddCocktailUseCase
 import com.example.cocktailsmyapp.domain.models.Cocktail
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -13,9 +12,9 @@ import javax.inject.Inject
 
 
 @HiltViewModel
-class AddCocktailViewModel @Inject constructor(private val interactorCocktail: CocktailInteractor) :
+class AddCocktailViewModel @Inject constructor(private val addCocktailUseCase: AddCocktailUseCase) :
     ViewModel() {
-    val imageUri = Uri.parse(R.string.path_main_domain.toString() + R.drawable.cocktail1).toString()
+    private val imageUri = R.string.path_main_domain.toString() + R.drawable.cocktail1
 
     private val imageCocktailMutable = MutableStateFlow(imageUri)
     private val titleCocktailMutable = MutableStateFlow(R.string.new_cocktail.toString())
@@ -27,7 +26,7 @@ class AddCocktailViewModel @Inject constructor(private val interactorCocktail: C
 
     fun addCocktail() {
         viewModelScope.launch {
-            interactorCocktail.addCocktail(
+            addCocktailUseCase.addCocktail(
                 Cocktail(
                     0,
                     title = titleCocktailMutable.value,

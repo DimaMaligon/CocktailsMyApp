@@ -18,10 +18,6 @@ class CocktailRepositoryImpl @Inject constructor(
         }
     }
 
-    override suspend fun getCocktailById(id: Long): Cocktail? {
-        TODO("Not yet implemented")
-    }
-
     override suspend fun addCocktail(cocktail: Cocktail) {
         return localSource.insertToCocktails(mapper.mapToEntity(cocktail))
     }

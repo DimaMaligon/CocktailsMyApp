@@ -1,7 +1,7 @@
 package com.example.cocktailsmyapp.screens.main
 
 import androidx.lifecycle.ViewModel
-import com.example.cocktailsmyapp.domain.interactors.CocktailInteractor
+import com.example.cocktailsmyapp.domain.interactors.GetCocktailsUseCase
 import com.example.cocktailsmyapp.domain.models.Cocktail
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -11,7 +11,7 @@ import javax.inject.Inject
 
 
 @HiltViewModel
-class MainViewModel @Inject constructor(private val interactorCocktail: CocktailInteractor) :
+class MainViewModel @Inject constructor(private val getCocktailsUseCase: GetCocktailsUseCase) :
     ViewModel() {
     private val cocktailsListMutable: MutableStateFlow<MutableList<Cocktail>> =
         MutableStateFlow(mutableListOf())
@@ -19,6 +19,6 @@ class MainViewModel @Inject constructor(private val interactorCocktail: Cocktail
 
     suspend fun getCocktails() =
         withContext(Dispatchers.IO) {
-            cocktailsListMutable.value = interactorCocktail.getCocktails() as MutableList<Cocktail>
+            cocktailsListMutable.value = getCocktailsUseCase.getCocktails() as MutableList<Cocktail>
         }
 }
